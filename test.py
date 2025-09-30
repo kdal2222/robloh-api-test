@@ -10,7 +10,7 @@ UNIVERSE_ID = "8838594486"
 @app.route("/get", methods=["GET"])
 def get_data():
     key = request.args.get("key")
-    DATASTORE_NAME = str(request.args.get("DataStore"))
+    DATASTORE_NAME = request.args.get("DataStore")
     url = f"https://apis.roblox.com/datastores/v1/universes/{UNIVERSE_ID}/standard-datastores/datastore/entries/entry"
     headers = {"x-api-key": API_KEY}
     params = {"datastoreName": DATASTORE_NAME, "entryKey": key}
