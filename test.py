@@ -4,13 +4,13 @@ import requests
 
 app = Flask(__name__)
 
-API_KEY = os.getenv("ROBLOX_API_KEY")
-UNIVERSE_ID = "ТВОЙ_UNIVERSE_ID"  # Замени на свой Universe ID
-DATASTORE_NAME = "PlayerData"
+API_KEY = os.getenv("ROBLOXAPIBSS")
+UNIVERSE_ID = "8838594486"
 
 @app.route("/get", methods=["GET"])
 def get_data():
     key = request.args.get("key")
+    DATASTORE_NAME = request.args.get("DataStore")
     url = f"https://apis.roblox.com/datastores/v1/universes/{UNIVERSE_ID}/standard-datastores/datastore/entries/entry"
     headers = {"x-api-key": API_KEY}
     params = {"datastoreName": DATASTORE_NAME, "entryKey": key}
