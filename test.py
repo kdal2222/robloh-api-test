@@ -5,7 +5,6 @@ import requests
 app = Flask(__name__)
 
 API_KEY = os.getenv("ROBLOXAPIBSS")
-print(API_KEY)
 UNIVERSE_ID = "8838594486"
 
 @app.route("/get", methods=["GET"])
